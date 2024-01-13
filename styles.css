@@ -1,0 +1,110 @@
+body {
+    background-color: #f2f2f2; /* Set your desired background color */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    background-image: url('images/logo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Set your desired height */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.header-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+#about-me {
+    flex-basis: 30%; /* Adjust the width of the left pane */
+    background-color: #34db6e; /* Set your desired background color */
+    padding: 20px;
+    color: white;
+}
+
+#information {
+    flex-basis: 60%; /* Adjust the width of the center pane */
+    background-color: #ecf0f1; /* Set your desired background color */
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333; /* Set your desired background color */
+    color: white;
+}
+
+/* Add this to styles.css */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333; /* Set your desired background color */
+    padding: 10px;
+}
+
+nav .header-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav .header-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Add this to styles.css */
+#contact-form {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#contact-form label {
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+

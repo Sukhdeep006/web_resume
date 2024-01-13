@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+</head>
+<style>
+        /* Your general styles go here */
+
+        /* Media query for mobile devices */
+        @media only screen and (max-width: 600px) {
+            /* Styles specific to mobile view */
+            body {
+                font-size: 16px; /* Adjust font size for better readability on smaller screens */
+            }
+
+            /* You can add more styles specific to mobile view as needed */
+        }
+    </style>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Header Image">
+    </header>
+
+    <nav>
+        <button class="header-button" onclick="navigateTo('home')">Home</button>
+        <button class="header-button" onclick="navigateTo('academic')">Academic History</button>
+        <button class="header-button" onclick="navigateTo('professional')">Professional History</button>
+        <button class="header-button" onclick="navigateTo('testimonials')">Testimonials</button>
+        <button class="header-button" onclick="navigateTo('skills')">Skills</button>
+        <button class="header-button" onclick="navigateTo('contact')">Contact</button>
+    </nav>
+
+    <main>
+        <div id="about-me">
+            <h2>About me</h2>
+			<img src="images/about.jpg" alt="Professional Image" width="300" height="200">
+  
+        </div>
+        <div id="information">
+            <h2>WELCOME</h2>
+            <p>Welcome to my world of creativity! I'm a passionate web developer and designer with a love for crafting digital experiences that leave a lasting impression.</p>
+            <p>When I'm not coding, you might find me exploring new design trends, experimenting with unique color palettes, or brainstorming innovative solutions to complex problems.</p>
+            <p>Let's embark on a journey where technology meets art, and together, we can create something extraordinary!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WEB GROUP | Email: services@email.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
