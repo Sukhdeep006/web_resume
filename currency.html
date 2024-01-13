@@ -1,129 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="style.css">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currency Converter</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-	
-	.notice {
-      background-color: #e74c3c;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    label {
-      display: block;
-      margin: 10px 0;
-      color: #555;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
 
-    select,
-    input,
-    button,
-    span {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        .header-button {
+            margin: 0 10px;
+            color: #fff;
+            background-color: #555;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    button {
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    button:hover {
-      background-color: #2980b9;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #27ae60;
-    }
+        .notice {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
 
-    .error {
-      color: #c0392b;
-    }
-	
-      
-   
-  </style>
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        select,
+        input,
+        button,
+        span {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .error {
+            color: #c0392b;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-button {
+                margin: 5px 0;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .notice,
+            label,
+            select,
+            input,
+            button,
+            span {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
-<header>
+
+<body>
+    <header>
         <img src="images/logo.jpg" alt="Header Image">
     </header>
-<nav>
+    <nav>
         <button class="header-button" onclick="navigateTo('home')">Home</button>
         <button class="header-button" onclick="navigateTo('academic')">Academic History</button>
         <button class="header-button" onclick="navigateTo('professional')">Professional History</button>
-		<button class="header-button" onclick="navigateTo('currency')">Currency Converter</button>
+        <button class="header-button" onclick="navigateTo('currency')">Currency Converter</button>
         <button class="header-button" onclick="navigateTo('forecast')">Fuel Forecast</button>
         <button class="header-button" onclick="navigateTo('testimonials')">Testimonials</button>
         <button class="header-button" onclick="navigateTo('skills')">Skills</button>
         <button class="header-button" onclick="navigateTo('contact')">Contact</button>
     </nav>
-<body>
-  <div class="container">
-  <div class="notice">
-      <p><strong>Notice:</strong> Amount over 1,000,000 is not allowed.</p>
+    <div class="container">
+        <div class="notice">
+            <p><strong>Notice:</strong> Amount over 1,000,000 is not allowed.</p>
+        </div>
+        <h1>Currency Converter</h1>
+
+        <label for="sourceCurrency">Source Currency:</label>
+        <select id="sourceCurrency" disabled>
+            <option value="gbp">GBP (UK Pound)</option>
+        </select>
+
+        <label for="destinationCurrency">Destination Currency:</label>
+        <select id="destinationCurrency">
+            <!-- Options will be dynamically added here using JavaScript -->
+        </select>
+
+        <label for="exchangeRate">Current Exchange Rate:</label>
+        <span id="exchangeRate"></span>
+
+        <label for="calculationTimestamp">Calculation Timestamp:</label>
+        <span id="calculationTimestamp"></span>
+
+        <label for="amount">Amount of transaction:</label>
+        <input type="number" id="amount" min="0" step="0.01">
+
+        <button onclick="convertCurrency()">Convert</button>
+
+        <div id="result"></div>
     </div>
-    <h1>Currency Converter</h1>
-
-    <label for="sourceCurrency">Source Currency:</label>
-    <select id="sourceCurrency" disabled>
-      <option value="gbp">GBP (UK Pound)</option>
-    </select>
-
-    <label for="destinationCurrency">Destination Currency:</label>
-    <select id="destinationCurrency">
-      <!-- Options will be dynamically added here using JavaScript -->
-    </select>
-
-    <label for="exchangeRate">Current Exchange Rate:</label>
-    <span id="exchangeRate"></span>
-
-    <label for="calculationTimestamp">Calculation Timestamp:</label>
-    <span id="calculationTimestamp"></span>
-
-    <label for="amount">Amount of transaction:</label>
-    <input type="number" id="amount" min="0" step="0.01">
-
-    <button onclick="convertCurrency()">Convert</button>
-
-    <div id="result"></div>
-  </div>
 
   <script>
     let destinationCurrencies;
