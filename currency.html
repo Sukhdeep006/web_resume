@@ -130,49 +130,50 @@
     </style>
 </head>
 
-<body>
-    <header>
+
+<header>
         <img src="images/logo.jpg" alt="Header Image">
     </header>
-    <nav>
+<nav>
         <button class="header-button" onclick="navigateTo('home')">Home</button>
         <button class="header-button" onclick="navigateTo('academic')">Academic History</button>
         <button class="header-button" onclick="navigateTo('professional')">Professional History</button>
-        <button class="header-button" onclick="navigateTo('currency')">Currency Converter</button>
+		<button class="header-button" onclick="navigateTo('currency')">Currency Converter</button>
         <button class="header-button" onclick="navigateTo('forecast')">Fuel Forecast</button>
         <button class="header-button" onclick="navigateTo('testimonials')">Testimonials</button>
         <button class="header-button" onclick="navigateTo('skills')">Skills</button>
         <button class="header-button" onclick="navigateTo('contact')">Contact</button>
     </nav>
-    <div class="container">
-        <div class="notice">
-            <p><strong>Notice:</strong> Amount over 1,000,000 is not allowed.</p>
-        </div>
-        <h1>Currency Converter</h1>
-
-        <label for="sourceCurrency">Source Currency:</label>
-        <select id="sourceCurrency" disabled>
-            <option value="gbp">GBP (UK Pound)</option>
-        </select>
-
-        <label for="destinationCurrency">Destination Currency:</label>
-        <select id="destinationCurrency">
-            <!-- Options will be dynamically added here using JavaScript -->
-        </select>
-
-        <label for="exchangeRate">Current Exchange Rate:</label>
-        <span id="exchangeRate"></span>
-
-        <label for="calculationTimestamp">Calculation Timestamp:</label>
-        <span id="calculationTimestamp"></span>
-
-        <label for="amount">Amount of transaction:</label>
-        <input type="number" id="amount" min="0" step="0.01">
-
-        <button onclick="convertCurrency()">Convert</button>
-
-        <div id="result"></div>
+<body>
+  <div class="container">
+  <div class="notice">
+      <p><strong>Notice:</strong> Amount over 1,000,000 is not allowed.</p>
     </div>
+    <h1>Currency Converter</h1>
+
+    <label for="sourceCurrency">Source Currency:</label>
+    <select id="sourceCurrency" disabled>
+      <option value="gbp">GBP (UK Pound)</option>
+    </select>
+
+    <label for="destinationCurrency">Destination Currency:</label>
+    <select id="destinationCurrency">
+      <!-- Options will be dynamically added here using JavaScript -->
+    </select>
+
+    <label for="exchangeRate">Current Exchange Rate:</label>
+    <span id="exchangeRate"></span>
+
+    <label for="calculationTimestamp">Calculation Timestamp:</label>
+    <span id="calculationTimestamp"></span>
+
+    <label for="amount">Amount of transaction:</label>
+    <input type="number" id="amount" min="0" step="0.01">
+
+    <button onclick="convertCurrency()">Convert</button>
+
+    <div id="result"></div>
+  </div>
 
   <script>
     let destinationCurrencies;
